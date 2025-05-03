@@ -1,23 +1,21 @@
-import { useState } from "react";
-import Feedback from "./components/Feedback";
-import Options from "./components/Options";
-import Notification from "./components/Notification";
+import React from 'react'
+import Feedback from "../src/components/Feedback/Feedback";
+import Options from "../src/components/Options/Options";
+import Notification from "../src/components/Notification/Notification";
+import Description from "../src/components/Description/Description";
 import "./App.css";
 
 function App() {
-  const [Feedback, setFeedback] = useState({
-    good: 0,
-    neutral: 0,
-    bad: 0,
-  });
+
 
   return (
     <div className="App">
-      <h1>Sip Happens Café</h1>
-      <p>Please leave your feedback about our service by selecting one of the options below.</p>
 
+      <Description />
       <Options />
       <Feedback />
+      <Notification />
+
     </div>
   );
 }
