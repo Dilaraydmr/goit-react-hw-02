@@ -6,28 +6,25 @@ import Description from "../Description/Description";
 import "./App.css";
 
 function App() {
-
   const [feedback, setFeedback] = useState({
     good: 0,
     neutral: 0,
     bad: 0,
   });
 
-
-  const updateFeedback = type => {
-    setFeedback(prev => ({
+  const updateFeedback = (type) => {
+    setFeedback((prev) => ({
       ...prev,
       [type]: prev[type] + 1,
     }));
   };
 
-
   const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
 
-
   const positivePercentage =
-    totalFeedback > 0 ? Math.round((feedback.good / totalFeedback) * 100) : 0;
-
+    totalFeedback > 0
+      ? Math.round((feedback.good / totalFeedback) * 100)
+      : 0;
 
   const resetFeedback = () => {
     setFeedback({
@@ -64,4 +61,3 @@ function App() {
 }
 
 export default App;
-

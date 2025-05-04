@@ -1,21 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-function Options({ updateFeedback, resetFeedback, totalFeedback }) {
+function Options({ options, onLeaveFeedback, onReset, hasFeedback }) {
     return (
         <div>
-            <button type="button" onClick={() => updateFeedback('good')}>
-                Good
-            </button>
-            <button type="button" onClick={() => updateFeedback('neutral')}>
-                Neutral
-            </button>
-            <button type="button" onClick={() => updateFeedback('bad')}>
-                Bad
-            </button>
+            {options.map(option => (
+                <button key={option} onClick={() => onLeaveFeedback(option)}>
+                    {option}
+                </button>
+            ))}
 
-            { }
-            {totalFeedback > 0 && (
-                <button type="button" onClick={resetFeedback}>
+            {hasFeedback && (
+                <button onClick={onReset}>
                     Reset
                 </button>
             )}
